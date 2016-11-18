@@ -219,21 +219,8 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/jquery.nice-select.js"></script>
     <script src="js/icheck.min.js"></script>
-    <script src="js/jquery.mask.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script type="text/javascript">
-    function getFormData($form){
-      var unindexed_array = $form.serializeArray();
-      var indexed_array = {};
-
-      $.map(unindexed_array, function(n, i){
-          if(n['value'] == "true") n['value'] = true;
-          if(n['value'] == "false") n['value'] = false;
-          indexed_array[n['name']] = n['value'];
-      });
-      return indexed_array;
-    }
-
     $(document).ready(function() {
       $('select').niceSelect();
       $(".form-message").hide();
@@ -244,60 +231,6 @@
         checkboxClass: 'icheckbox_minimal',
         radioClass: 'iradio_minimal',
         increaseArea: '20%' // optional
-      });
-
-      $('#requestedLoanAmount').mask('000,000,000,000,000', {reverse: true});
-      $('#estimatedCurrentDebtBalance1st').mask('000,000,000,000,000', {reverse: true});
-      $('#estimatedCurrentDebtBalance2nd').mask('000,000,000,000,000', {reverse: true});
-
-      $('#phone').mask('(000) 000-0000', {placeholder: "(___) ___-____"});
-      $('#propertyZip').mask('00000');
-
-      $('#estimatedCurrentDebtBalance2ndContainer').hide();
-
-      $('input:radio[name="trust-deed"]').on('ifChanged', function(event){
-        if ($(this).val() == '2nd') {
-          $('#estimatedCurrentDebtBalance2ndContainer').show();
-        }
-        else {
-          $('#estimatedCurrentDebtBalance2ndContainer').hide();
-        }
-      });
-
-      $( "form").submit(function( event ) {
-          event.preventDefault();
-
-          var dataString = getFormData($("#formLead"));
-          delete dataString["trust-deed"];
-          dataString.leadDomain = "ecapital.com";
-          dataString.leadType = "Web";
-          dataString.leadStatus = "Lead";
-          // todo : serializeArray not returning all fields
-          dataString.lastName = $('#lastName').val();
-          dataString.propertyAddress = $('#propertyAddress').val();
-
-          console.log(dataString);
-
-          if(dataString.firstName && dataString.lastName && dataString.phone && dataString.email) {
-              console.log('all set');
-          } else {
-              alert('Please fill in all required fields.');
-              return false;
-          }
-
-          var postUrl = "http://staging-ecap-admin.zyoninc.com/methods/createLead";
-          //var postUrl = "http://localhost:3000/methods/createLead";
-
-          $.ajax({
-            method: "post",
-            url: postUrl,
-            data: JSON.stringify(dataString),
-            contentType: "application/json",
-            success: function (data) {
-              console.log(data); // 6
-              alert('Your information has been forwarded to our agent. Someone will be in contact with you as soon as possible.');
-            }
-          });
       });
     });
 </script>
