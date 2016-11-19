@@ -24,6 +24,7 @@
       <div class="container">
         <div class="menu-bar pull-left">
           <a href="index.html" class="logo">Bank</a>
+          <a href="#" class="font-change increase-size">A</a>
           <ul class="menu">
             <li><a href="about.html">ABOUT US</a></li>
             <li><a href="how-it-works.html">HOW IT WORKS?</a></li>
@@ -44,7 +45,17 @@
     <div class="top-bg-v2">
       <div class="container">
         <div class="row">
-          <div class="col-md-8 col-md-offset-4">
+          <div class="col-md-2 col-md-offset-2">
+              <h2>CONTACT</h2>
+              <p><strong>eCapital</strong> <br /><br />
+              861 6th Ave <br />
+              Ste 612 <br />
+              San Diego, CA 92101 <br /><br />
+
+              <a href="mailto:contact@ecapital.com">contact@ecapital.com</a><br />
+              <a href="#">858-34LOANS (858-345-6267)</a></p>
+          </div>
+          <div class="col-md-8">
             <h2>PRE-QUALIFICATION LOAN APPLICATION</h2>
             <form id="formLead">
               <div class="form">
@@ -168,7 +179,7 @@
           </div>-->
           <div class="col-sm-6 text-right">
             <h4>Contact Our Agent Now!</h4>
-            <span class="big-text">858-34LOANS</span>
+            <span class="big-text">858-34LOANS <span>(858-345-6267)</span></span>
           </div>
         </div>
       </div>
@@ -180,7 +191,7 @@
             <a href="#" class="footer-logo">Bank</a>
             <p>eLending.  Real estate loans for investors. Hard Money Loans, Loans with no credit checks. Loans with no tax returns, Loans without income verification. <br /> We also lend against luxury assets, click <a href="#">here to learn more</a></p>
           </div>
-          <div class="col-sm-4">
+          <div class="col-sm-4 helpful-links">
             <h4>HELPFUL LINKS</h4>
             <ul>
               <li><a href="#">Apply Now</a></li>
@@ -219,8 +230,21 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/jquery.nice-select.js"></script>
     <script src="js/icheck.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script type="text/javascript">
+    <script src="js/jquery.mask.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+     <script type="text/javascript">
+    function getFormData($form){
+      var unindexed_array = $form.serializeArray();
+      var indexed_array = {};
+
+      $.map(unindexed_array, function(n, i){
+          if(n['value'] == "true") n['value'] = true;
+          if(n['value'] == "false") n['value'] = false;
+          indexed_array[n['name']] = n['value'];
+      });
+      return indexed_array;
+    }
+
     $(document).ready(function() {
       $('select').niceSelect();
       $(".form-message").hide();
@@ -232,7 +256,76 @@
         radioClass: 'iradio_minimal',
         increaseArea: '20%' // optional
       });
-    });
-</script>
+      var fontSize = 0;
+      $(".font-change").click(function(){
+        if(fontSize === 0){
+          $(this).removeClass("increase-size");
+          $(this).addClass("decrease-size");
+          $("body").addClass("big-font");
+          fontSize = 1;
+        } else {
+          $(this).removeClass("decrease-size");
+          $(this).addClass("increase-size");
+          $("body").removeClass("big-font");
+          fontSize = 0;
+        }
+      });
+
+      $('#requestedLoanAmount').mask('000,000,000,000,000', {reverse: true});
+      $('#estimatedCurrentDebtBalance1st').mask('000,000,000,000,000', {reverse: true});
+      $('#estimatedCurrentDebtBalance2nd').mask('000,000,000,000,000', {reverse: true});
+
+      $('#phone').mask('(000) 000-0000', {placeholder: "(___) ___-____"});
+      $('#propertyZip').mask('00000');
+
+      $('#estimatedCurrentDebtBalance2ndContainer').hide();
+
+      $('input:radio[name="trust-deed"]').on('ifChanged', function(event){
+        if ($(this).val() == '2nd') {
+          $('#estimatedCurrentDebtBalance2ndContainer').show();
+        }
+        else {
+          $('#estimatedCurrentDebtBalance2ndContainer').hide();
+        }
+      });
+
+      $( "form").submit(function( event ) {
+          event.preventDefault();
+
+          var dataString = getFormData($("#formLead"));
+          delete dataString["trust-deed"];
+          dataString.leadDomain = "ecapital.com";
+          dataString.leadType = "Web";
+          dataString.leadStatus = "Lead";
+          // todo : serializeArray not returning all fields
+          dataString.lastName = $('#lastName').val();
+          dataString.propertyAddress = $('#propertyAddress').val();
+
+          console.log(dataString);
+
+          if(dataString.firstName && dataString.lastName && dataString.phone && dataString.email) {
+              console.log('all set');
+          } else {
+              alert('Please fill in all required fields.');
+              return false;
+          }
+
+          var postUrl = "http://staging-ecap-admin.zyoninc.com/methods/createLead";
+          //var postUrl = "http://localhost:3000/methods/createLead";
+
+          $.ajax({
+            method: "post",
+            url: postUrl,
+            data: JSON.stringify(dataString),
+            contentType: "application/json",
+            success: function (data) {
+              console.log(data); // 6
+              alert('Your information has been forwarded to our agent. Someone will be in contact with you as soon as possible.');
+            }
+          });
+      });
+     });
+ </script>
+
   </body>
 </html>

@@ -145,7 +145,7 @@ button {
   float:left;
   font-family: 'Nexa';
   font-size:13px;
-  margin-left:30px;
+  margin-left:15px;
   margin-bottom:0;
 }
 
@@ -1281,6 +1281,156 @@ footer p {
     font-size: 16px;
     line-height: 27px;
 }
+
+.top-bg-v2 .col-md-2 h2 {
+  margin-left:0;
+}
+
+.big-text span {
+  display:block;
+  font-size:24px;
+}
+
+.helpful-links {
+  padding-left:60px;
+}
+
+.font-change {
+  float:left;
+  margin-left:10px;
+  font-size:18px;
+  font-weight:700;
+  font-family: 'Nexa';
+  position:relative;
+  border-left: 1px solid #e7e9e9;
+  margin-left:10px;
+  height:59px;
+  padding-top:19px;
+  padding-left:10px;
+  color:#696969 !important;
+}
+
+.increase-size:after {
+  position:absolute;
+  content:'+';
+}
+
+.decrease-size:after {
+  position:absolute;
+  content:'-';
+}
+
+body.big-font p {
+  font-size:20px;
+}
+
+body.big-font .menu {
+  font-size:17px;
+}
+
+body.big-font .menu li {
+  padding:10px 20px;
+}
+
+body.big-font .banner-content h2 {
+  font-size:34px;
+  margin-top:40px;
+}
+
+body.big-font .checkmark-list {
+  font-size:22px;
+  margin-top:15px;
+  margin-bottom:15px;
+}
+
+body.big-font .banner-content .green-text, body.big-font .banner-content .fill-form {
+  font-size:26px;
+  max-width:450px;
+}
+
+body.big-font .banner-content .green-text {
+  margin:15px 0 15px 10px;
+}
+
+body.big-font .button {
+  font-size:24px;
+  width:200px;
+  padding-top:12px;
+}
+
+body.big-font .call-text {
+  font-size:30px;
+}
+
+body.big-font .small-text, body.big-font .bottom-link {
+  font-size:19px;
+}
+
+body.big-font .subpage p {
+  font-size:20px;
+}
+
+body.big-font .icon-row h2 {
+  font-size:30px;
+}
+
+body.big-font .icon-row h2 span {
+  font-size:22px;
+}
+
+body.big-font .icon-row p {
+  font-size:30px;
+}
+
+body.big-font .icon-box {
+  min-height:360px;
+}
+
+body.big-font .icon-box:after {
+  height:360px;
+}
+
+body.big-font .apply-link {
+  font-size:54px;
+}
+
+body.big-font .luxury-assets-link {
+  font-size:32px;
+}
+
+body.big-font h2 {
+  font-size:34px;
+}
+
+body.big-font h3 {
+  font-size:26px;
+}
+
+body.big-font .circle-big {
+  font-size: 20px;
+  line-height: 23px;
+}
+
+body.big-font .customer p {
+  font-size:24px;
+}
+
+body.big-font .customer span {
+  font-size:20px;
+}
+
+body.big-font .footer-links p {
+  font-size:18px;
+}
+
+body.big-font .footer-links a {
+  font-size:18px;
+}
+
+body.big-font .footer-links h4 {
+  font-size:21px;
+}
+
 
 @media (min-width: 1200px) {
   .circle-big {
