@@ -27,7 +27,6 @@
       <div class="container">
         <div class="menu-bar pull-left">
           <a href="index.html" class="logo">Bank</a>
-          <a href="#" class="font-change increase-size">A</a>
           <ul class="menu">
             <li><a href="about.html">ABOUT US</a></li>
             <li><a href="how-it-works.html">HOW IT WORKS?</a></li>
@@ -42,6 +41,8 @@
             <li><a href="#" class="linkedin-top">Linkedin</a></li>
             <li><a href="#" class="blogger-top">Blogger</a></li>
           </ul>
+          <a href="#" class="font-change increase-size">+</a>
+          <a href="#" class="font-change decrease-size">-</a>
         </div>
       </div>
     </div>
@@ -56,15 +57,14 @@
         <h3 class="center">Here are some sample deals</h3>
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
-            <!--<div class="media">
+            <div class="media">
               <div class="media-left media-middle">
                 <span>
                   1
                 </span>
               </div>
               <div class="media-body">
-                <h3>Nam consectetuer adipiscing elit nibh, interdum viverra</h3>
-                <p>Pellentesque eget lacus lacus scelerisque mauris non tincidunt nulla. Nullam risus dolor sit amet, consectetuer vulputate quam. Nulla sed condimentum odio orci, placerat at, convallis quam in augue. Donec mauris viverra lacinia. Vestibulum sollicitudin.</p>
+                <h3>Fill out our simple prequalification form or give us a call. No credit checks, income verification, or tax returns necessary.</h3>
               </div>
             </div>
             <div class="media">
@@ -74,8 +74,7 @@
                 </span>
               </div>
               <div class="media-body">
-                <h3>Placerat at, convallis quam in augue</h3>
-                <p>Donec mauris viverra lacinia. Vestibulum sollicitudin. Cras egestas dignissim, lorem sapien, non tincidunt molestie, neque. Maecenas consequat, metus hendrerit sollicitudin. Praesent sit amet wisi.</p>
+                <h3>If your loan is accepted you will receive an LOI with our terms</h3>
               </div>
             </div>
             <div class="media">
@@ -85,39 +84,9 @@
                 </span>
               </div>
               <div class="media-body">
-                <h3>Donec eu dui a augue at tortor</h3>
-                <p>Phasellus tellus consectetuer tellus sodales sed, eros. In nunc sollicitudin leo non eros. Nullam laoreet, est et posuere cubilia Curae, Phasellus ornare enim quis ipsum. Aenean pellentesque sed, dapibus non, iaculis pretium varius.</p>
+                <h3>Close your loan and receive funding in as little as 5 days—it’s that easy.</h3>
               </div>
             </div>
-            <div class="media">
-              <div class="media-left media-middle">
-                <span>
-                  4
-                </span>
-              </div>
-              <div class="media-body">
-                <h3>Duis condimentum ante eget augue</h3>
-                <p>Aenean vel massa. Donec elementum eros egestas sit amet interdum pellentesque sed, viverra sed, congue ac, ultricies accumsan. Proin ultricies libero ac lacinia ut, ultricies lacinia erat. Nulla a ipsum. Praesent a nibh. Suspendisse potenti. Quisque nulla.</p>
-              </div>
-            </div>-->
-            <p>Here are some examples of Loans we have worked on.  Do you need a loan for a non-owner occupied property? <a href="contact-us.html">Contact Us</a> <br /><br />
-
-A hard money loan recently closed on a home in San Fernando, CA. The trust deed investment is at 6.9% and here are the details: <br />
-Loan amount: $179,000 <br />
-Appraised Value: $395,000 <br />
-Loan to Value: 45.3% <br />
-Term of loan: 3 years
-<br /><br />
-
-A hard money loan recently closed on a home in Laguna Woods, CA. The trust deed investment is at 8.9% and here are the details: <br />
-Loan amount: $162,000 <br />
-Appraised Value: $215,000 <br />
-Loan to Value: 75.3% <br />
-Term of loan: 1 year
-<br /><br />
-
-eCapital can help you with your needs. If you have a non-owner occupied property and need a loan, <a href="contact-us.html">Contact Us</a>
-</p>
           </div>
         </div>
       </div>
@@ -250,19 +219,16 @@ eCapital can help you with your needs. If you have a non-owner occupied property
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-      var fontSize = 0;
-      $(".font-change").click(function(){
-        if(fontSize === 0){
-          $(this).removeClass("increase-size");
-          $(this).addClass("decrease-size");
+      $(".decrease-size").hide();
+      $(".increase-size").click(function(){
+          $(this).hide();
+          $(".decrease-size").show();
           $("body").addClass("big-font");
-          fontSize = 1;
-        } else {
-          $(this).removeClass("decrease-size");
-          $(this).addClass("increase-size");
-          $("body").removeClass("big-font");
-          fontSize = 0;
-        }
+      });
+      $(".decrease-size").click(function(){
+        $(this).hide();
+        $(".increase-size").show();
+        $("body").removeClass("big-font");
       });
       $('select').niceSelect();
       $('.testimonials').slick({

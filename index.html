@@ -27,7 +27,6 @@
       <div class="container">
         <div class="menu-bar pull-left">
           <a href="index.html" class="logo">Bank</a>
-          <a href="#" class="font-change increase-size">A</a>
           <ul class="menu">
             <li><a href="about.html">ABOUT US</a></li>
             <li><a href="how-it-works.html">HOW IT WORKS?</a></li>
@@ -42,6 +41,8 @@
             <li><a href="#" class="linkedin-top">Linkedin</a></li>
             <li><a href="#" class="blogger-top">Blogger</a></li>
           </ul>
+          <a href="#" class="font-change increase-size">+</a>
+          <a href="#" class="font-change decrease-size">-</a>
         </div>
       </div>
     </div>
@@ -58,7 +59,7 @@
           <p class="green-text">OUR TERMS ARE FLEXIBLE, OUR PROCESS IS FAST</p>
           <p class="fill-form">FILL OUT OUR SIMPLE FORM AND WE CAN QUALIFY YOU INSTANTLY</p>
           <a href="form.html" class="button">GET STARTED</a>
-          <span class="call-text">Call  858-34LOANS</span>
+          <span class="call-text">Call  858-34LOANS (858-345-6267)</span>
           <div class="clearfix"></div>
           <p class="small-text">WE ARE THE LENDER, NOT THE BROKER.</p>
           <a href="#" class="bottom-link">We Also Lend on Luxury Assets, Click Here To Learn More</a>
@@ -97,7 +98,7 @@
       </div>
     </div>
     <a href="form.html" class="apply-link">
-      APPLY NOW OR CALL
+      APPLY NOW OR CALL 858-34LOANS (858-345-6267)
     </a>
     <a href="http://digi-demo.netau.net/elending/" class="luxury-assets-link">
       We Also Lend on Luxury Assets, Click Here To Learn More
@@ -170,7 +171,7 @@
       </div>
     </div>-->
     <a href="form.html" class="apply-link">
-      APPLY NOW OR CALL
+      APPLY NOW OR CALL 858-34LOANS (858-345-6267)
     </a>
     <a href="http://digi-demo.netau.net/elending/" class="luxury-assets-link">
       We Also Lend on Luxury Assets, Click Here To Learn More
@@ -286,12 +287,13 @@
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-      $(function () {
+ $(function () {
     var body = $('.main-banner');
     var backgrounds = [
       'url(images/main-banner-bg.jpg)',
       'url(images/main-banner-bg2.jpg)',
-      'url(images/main-banner-bg3.jpg)'];
+      'url(images/main-banner-bg3.jpg)',
+      'url(images/main-banner-bg5.jpg)'];
     var current = 0;
 
     function nextBackground() {
@@ -305,23 +307,15 @@
     body.css('background', backgrounds[0]);
     body.css('backgroundSize', "cover");
 });
-      var fontSize = 0;
-      $(".font-change").click(function(){
-        if(fontSize === 0){
-          $(this).removeClass("increase-size");
-          $(this).addClass("decrease-size");
+      $(".decrease-size").hide();
+      $(".increase-size").click(function(){
+          $(this).hide();
+          $(".decrease-size").show();
           $("body").addClass("big-font");
-          fontSize = 1;
-        } else {
-          $(this).removeClass("decrease-size");
-          $(this).addClass("increase-size");
-          $("body").removeClass("big-font");
-          fontSize = 0;
-        }
       });
       $(".decrease-size").click(function(){
-        $(this).removeClass("decrease-size");
-        $(this).addClass("increase-size");
+        $(this).hide();
+        $(".increase-size").show();
         $("body").removeClass("big-font");
       });
       $('select').niceSelect();

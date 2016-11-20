@@ -27,7 +27,6 @@
       <div class="container">
         <div class="menu-bar pull-left">
           <a href="index.html" class="logo">Bank</a>
-          <a href="#" class="font-change increase-size">A</a>
           <ul class="menu">
             <li><a href="about.html">ABOUT US</a></li>
             <li><a href="how-it-works.html">HOW IT WORKS?</a></li>
@@ -42,6 +41,8 @@
             <li><a href="#" class="linkedin-top">Linkedin</a></li>
             <li><a href="#" class="blogger-top">Blogger</a></li>
           </ul>
+          <a href="#" class="font-change increase-size">+</a>
+          <a href="#" class="font-change decrease-size">-</a>
         </div>
       </div>
     </div>
@@ -56,7 +57,7 @@
         <h3 class="center">Asset based loans is the sole focus of eLending.</h3>
         <div class="row">
           <div class="col-md-8">
-            <p>Asset based loans is the sole focus of eLending.  We lend money quickly and discreetly on real estate and personal assets.  We are licensed by  the State of California by the Bureau of Real Estate since 2000. Prior to the form.  We've enjoyed a proven track record of quality real estate investments and are committed to making the process easy and fast. We provide non-owner occupied hard money loans for primarily single-family properties (1-4 units) all over California. We make Hard Money Loans in  San Diego Country, Riverside County, Los Angeles County, Imperial County, Orange County, and throughout California.</p>
+            <p>Asset based loans are the sole focus of eCapital. We lend money on real estate and personal assets. We have over 50 years of experience in the sale of Real Estate and Luxury Assets giving us the capability to make quick decisions regarding the value of your Real Estate or Luxury Asset. Prior to forming eCapital. The partners have enjoyed a proven track record of quality real estate investments and are committed to making the process easy and fast. We provide non-owner occupied private money loans for residential and commercial properties all over California. Our typical clients are looking for quick financing secured by property in San Diego County, Riverside County, Los Angeles County, Imperial County, Orange County, and throughout California. If you have equity in your investment properties, let us help you utilize it.</p>
             <a href="form.html" class="button">APPLY NOW</a>
           </div>
           <div class="col-md-4">
@@ -193,19 +194,16 @@
     <script type="text/javascript" src="js/slick.min.js"></script>
     <script type="text/javascript">
     $(document).ready(function() {
-      var fontSize = 0;
-      $(".font-change").click(function(){
-        if(fontSize === 0){
-          $(this).removeClass("increase-size");
-          $(this).addClass("decrease-size");
+      $(".decrease-size").hide();
+      $(".increase-size").click(function(){
+          $(this).hide();
+          $(".decrease-size").show();
           $("body").addClass("big-font");
-          fontSize = 1;
-        } else {
-          $(this).removeClass("decrease-size");
-          $(this).addClass("increase-size");
-          $("body").removeClass("big-font");
-          fontSize = 0;
-        }
+      });
+      $(".decrease-size").click(function(){
+        $(this).hide();
+        $(".increase-size").show();
+        $("body").removeClass("big-font");
       });
       $('select').niceSelect();
       $('.testimonials').slick({

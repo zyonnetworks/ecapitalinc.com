@@ -24,7 +24,6 @@
       <div class="container">
         <div class="menu-bar pull-left">
           <a href="index.html" class="logo">Bank</a>
-          <a href="#" class="font-change increase-size">A</a>
           <ul class="menu">
             <li><a href="about.html">ABOUT US</a></li>
             <li><a href="how-it-works.html">HOW IT WORKS?</a></li>
@@ -39,6 +38,8 @@
             <li><a href="#" class="linkedin-top">Linkedin</a></li>
             <li><a href="#" class="blogger-top">Blogger</a></li>
           </ul>
+          <a href="#" class="font-change increase-size">+</a>
+          <a href="#" class="font-change decrease-size">-</a>
         </div>
       </div>
     </div>
@@ -47,13 +48,13 @@
         <div class="row">
           <div class="col-md-2 col-md-offset-2">
               <h2>CONTACT</h2>
-              <p><strong>eCapital</strong> <br /><br />
+              <p><strong>eCapital Inc.</strong> <br /><br />
               861 6th Ave <br />
               Ste 612 <br />
               San Diego, CA 92101 <br /><br />
 
-              <a href="mailto:contact@ecapital.com">contact@ecapital.com</a><br />
-              <a href="#">858-34LOANS (858-345-6267)</a></p>
+              <a href="mailto:contact@ecapital.com">contact@ecapitalinc.com</a><br />
+              <a href="#">858-34LOANS <br />(858-345-6267)</a></p>
           </div>
           <div class="col-md-8">
             <h2>PRE-QUALIFICATION LOAN APPLICATION</h2>
@@ -73,7 +74,7 @@
                   <div class="select-label">
                     What is this loan for?
                     <select name="whatIsThisLoanFor">
-                      <option value="Aqcuisition">Aqcuisition</option>
+                      <option value="Acquisition">Acquisition</option>
                       <option value="Refinance">Refinance</option>
                       <option value="Bridge loan">Bridge loan</option>
                       <option value="Fix & flip">Fix & Flip</option>
@@ -256,19 +257,16 @@
         radioClass: 'iradio_minimal',
         increaseArea: '20%' // optional
       });
-      var fontSize = 0;
-      $(".font-change").click(function(){
-        if(fontSize === 0){
-          $(this).removeClass("increase-size");
-          $(this).addClass("decrease-size");
+      $(".decrease-size").hide();
+      $(".increase-size").click(function(){
+          $(this).hide();
+          $(".decrease-size").show();
           $("body").addClass("big-font");
-          fontSize = 1;
-        } else {
-          $(this).removeClass("decrease-size");
-          $(this).addClass("increase-size");
-          $("body").removeClass("big-font");
-          fontSize = 0;
-        }
+      });
+      $(".decrease-size").click(function(){
+        $(this).hide();
+        $(".increase-size").show();
+        $("body").removeClass("big-font");
       });
 
       $('#requestedLoanAmount').mask('000,000,000,000,000', {reverse: true});

@@ -122,8 +122,8 @@ button {
 .logo, .footer-logo {
   text-indent:-10000em;
   background:url(../images/logo.png) no-repeat;
-  width:286px;
-  height:59px;
+  width:315px;
+  height:65px;
   display:inline-block;
   float:left;
   max-width:100%;
@@ -343,6 +343,7 @@ footer p {
   list-style:none;
   padding:0;
   margin:0;
+  float:left;
 }
 
 .social-icons li {
@@ -654,7 +655,7 @@ footer p {
 
 .banner-content h2 {
   font-size:26px;
-  color:#5f5e5e;
+  color:#FFFFFF;
   font-weight:700;
   margin-top:50px;
   margin-left:10px;
@@ -663,7 +664,7 @@ footer p {
 .checkmark-list {
   list-style:none;
   padding:0;
-  color:#649d34;
+  color:#99dc60;
   font-size:18px;
   font-weight:700;
   margin:30px 0 30px 10px;
@@ -685,7 +686,7 @@ footer p {
 }
 
 .green-text {
-  color:#649d34 !important;
+  color:#99dc60 !important;
   margin-left:10px;
 }
 
@@ -696,6 +697,7 @@ footer p {
 }
 
 .banner-content .fill-form {
+  color:#FFFFFF;
   font-size:18px;
   font-weight:400;
   max-width:340px;
@@ -728,7 +730,7 @@ footer p {
 
 .call-text {
   font-size:24px;
-  color:#373838;
+  color:#FFFFFF;
   font-family: 'Montserrat';
   font-weight:400;
   display:block;
@@ -741,7 +743,7 @@ footer p {
 .banner-content .small-text {
   font-family: 'Nexa';
   font-size:18px;
-  color:#515050;
+  color:#FFFFFF;
   float:left;
   margin-top:15px;
 }
@@ -1297,27 +1299,17 @@ footer p {
 
 .font-change {
   float:left;
-  margin-left:10px;
   font-size:18px;
   font-weight:700;
   font-family: 'Nexa';
   position:relative;
-  border-left: 1px solid #e7e9e9;
-  margin-left:10px;
-  height:59px;
-  padding-top:19px;
-  padding-left:10px;
+  margin-left:20px;
+  padding:4px 5px 0 5px;
+  line-height:18px;
+  border:1px solid #e7e9e9;
   color:#696969 !important;
-}
-
-.increase-size:after {
-  position:absolute;
-  content:'+';
-}
-
-.decrease-size:after {
-  position:absolute;
-  content:'-';
+  margin-top:20px;
+  border-radius:5px;
 }
 
 body.big-font p {
@@ -1431,6 +1423,9 @@ body.big-font .footer-links h4 {
   font-size:21px;
 }
 
+.media:nth-child(2) h3 {
+  margin-top:25px;
+}
 
 @media (min-width: 1200px) {
   .circle-big {
