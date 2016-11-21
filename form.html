@@ -12,6 +12,10 @@
     <link href="skins/minimal/minimal.css" rel="stylesheet">
     <link rel="stylesheet" href="css/nice-select.css">
 
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16">
+
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -130,8 +134,11 @@
                   </label>
                   <div class="select-label">
                     <span>Owner Occupied?</span>
-                    <label><input type="radio" name="ownerOccupied" id="ownerOccupied" value=true checked>Yes</label>
-                    <label><input type="radio" name="ownerOccupied" id="ownerOccupied" value=false>No</label>
+                    <label><input type="radio" name="ownerOccupied" id="ownerOccupied" value=true>Yes</label>
+                    <label><input type="radio" name="ownerOccupied" id="ownerOccupied" value=false checked>No</label>
+                  </div>
+                  <div class="owner-occupied-message">
+                    <p>We're not lending money on owner occupied estates.</p>
                   </div>
                   <label>
                     Email
@@ -251,6 +258,17 @@
       $(".form-message").hide();
       $(".form button").click(function(){
         $(".form-message").fadeIn(1000);
+      });
+      $(".owner-occupied-message").hide();
+      $('input:radio[name="ownerOccupied"]').on('ifChanged', function(event){
+        if ($(this).val() == 'true') {
+          $('.owner-occupied-message').show();
+          $('button[type="submit"]').attr('disabled','disabled');
+        }
+        else {
+          $('.owner-occupied-message').hide();
+          $('button[type="submit"]').removeAttr('disabled');
+        }
       });
       $('input').iCheck({
         checkboxClass: 'icheckbox_minimal',

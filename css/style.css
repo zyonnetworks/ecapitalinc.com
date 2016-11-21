@@ -98,6 +98,10 @@ button {
   margin-top:60px;
 }
 
+button:disabled {
+  opacity:.5;
+}
+
 .main-content h2 {
   color:#9bb606;
   font-size:34px;
@@ -1224,7 +1228,7 @@ footer p {
   font-size:18px;
 }
 
-.form-message {
+.form-message, .owner-occupied-message {
   border:1px solid #cc2c32;
   border-radius:5px;
   float:left;
@@ -1234,7 +1238,12 @@ footer p {
   margin-top:30px;
 }
 
-.form-message p {
+.owner-occupied-message {
+  margin-left:0px;
+  margin-bottom:20px;
+}
+
+.form-message p, .owner-occupied-message p {
   margin-bottom:0;
 }
 
