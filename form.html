@@ -310,7 +310,7 @@
 
           var dataString = getFormData($("#formLead"));
           delete dataString["trust-deed"];
-          dataString.leadDomain = "ecapital.com";
+          dataString.leadDomain = "ecapitalinc.com";
           dataString.leadType = "Web";
           dataString.leadStatus = "Lead";
           // todo : serializeArray not returning all fields
@@ -326,7 +326,7 @@
               return false;
           }
 
-          var postUrl = "http://staging-ecap-admin.zyoninc.com/methods/createLead";
+          var postUrl = "http://crm-staging.elendinginc.com/methods/createLead";
           //var postUrl = "http://localhost:3000/methods/createLead";
 
           $.ajax({
