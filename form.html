@@ -316,6 +316,10 @@
           // todo : serializeArray not returning all fields
           dataString.lastName = $('#lastName').val();
           dataString.propertyAddress = $('#propertyAddress').val();
+          dataString.phone = dataString.phone.replace(/-/g, '').replace(/\(|\)/g, '').replace(/ /g, '');
+          dataString.requestedLoanAmount = dataString.requestedLoanAmount.replace(/,/g, '');
+          dataString.estimatedCurrentDebtBalance1st = dataString.estimatedCurrentDebtBalance1st.replace(/,/g, '');
+          dataString.estimatedCurrentDebtBalance2nd = dataString.estimatedCurrentDebtBalance2nd.replace(/,/g, '');
 
           console.log(dataString);
 
