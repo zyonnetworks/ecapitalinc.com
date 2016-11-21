@@ -317,9 +317,9 @@
           dataString.lastName = $('#lastName').val();
           dataString.propertyAddress = $('#propertyAddress').val();
           dataString.phone = dataString.phone.replace(/-/g, '').replace(/\(|\)/g, '').replace(/ /g, '');
-          dataString.requestedLoanAmount = dataString.requestedLoanAmount.replace(/,/g, '');
-          dataString.estimatedCurrentDebtBalance1st = dataString.estimatedCurrentDebtBalance1st.replace(/,/g, '');
-          dataString.estimatedCurrentDebtBalance2nd = dataString.estimatedCurrentDebtBalance2nd.replace(/,/g, '');
+          dataString.requestedLoanAmount = $('#requestedLoanAmount').cleanVal();
+          dataString.estimatedCurrentDebtBalance1st = $('#estimatedCurrentDebtBalance1st').cleanVal();
+          dataString.estimatedCurrentDebtBalance2nd = $('#estimatedCurrentDebtBalance2nd').cleanVal();
 
           console.log(dataString);
 
