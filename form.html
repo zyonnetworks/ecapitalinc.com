@@ -316,7 +316,7 @@
           // todo : serializeArray not returning all fields
           dataString.lastName = $('#lastName').val();
           dataString.propertyAddress = $('#propertyAddress').val();
-          dataString.phone = dataString.phone.replace(/-/g, '').replace(/\(|\)/g, '').replace(/ /g, '');
+          dataString.phone = $('#phone').cleanVal();
           dataString.requestedLoanAmount = $('#requestedLoanAmount').cleanVal();
           dataString.estimatedCurrentDebtBalance1st = $('#estimatedCurrentDebtBalance1st').cleanVal();
           dataString.estimatedCurrentDebtBalance2nd = $('#estimatedCurrentDebtBalance2nd').cleanVal();
