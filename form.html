@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bank</title>
+    <title>eCapital</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -27,9 +27,21 @@
 
 <body>
     <div class="top">
+        <div class="barrita-top p10">
+            <div class="container">
+                <p class="p01  pull-left">WE ARE THE LENDER, NOT THE BROKER.</p>
+                <p class="p02  pull-right">Call 858-34LOANS (858-345-6267)</p>
+            </div>
+        </div>
         <div class="container">
-            <div class="menu-bar pull-left">
-                <a href="index.html" class="logo">Bank</a>
+            <div class="menu-icon">
+                <img src="images/menu-icon.png" alt="">
+            </div>
+            <div class="menu-bar pull-left ">
+
+                <a href="index.html" class="logo">
+                    <img src="images/logo.png" alt="eCapital">
+                </a>
                 <ul class="menu">
                     <li>
                         <a href="about.html">ABOUT US</a>
@@ -45,7 +57,7 @@
                     </li>
                 </ul>
             </div>
-            <div class="social-icons pull-right">
+            <div class="social-icons pull-right ocultar">
                 <ul class="social-icons">
                     <li>
                         <a href="#" class="facebook-top">Facebook</a>
@@ -65,7 +77,7 @@
             </div>
         </div>
     </div>
-    <div class="top-bg-v2">
+    <div class="top-bg-v2" style="padding-top: 80px;">
         <div class="container">
             <div class="row">
                 <div class="col-md-2 col-md-offset-2">
@@ -107,8 +119,8 @@
                                     <select name="whatIsThisLoanFor">
                                         <option value="Acquisition">Acquisition</option>
                                         <option value="Refinance">Refinance</option>
-                                        <option value="Bridge loan">Bridge loan</option>
-                                        <option value="Fix & flip">Fix & Flip</option>
+                                        <option value="Bridge Loan">Bridge loan</option>
+                                        <option value="Fix & Flip">Fix & Flip</option>
                                     </select>
                                 </div>
                                 <div class="select-label">
@@ -168,9 +180,9 @@
                                 <div class="select-label">
                                     <span>Owner Occupied?</span>
                                     <label>
-                                        <input type="radio" name="ownerOccupied" id="ownerOccupied" value=true>Yes</label>
+                                        <input type="radio" name="ownerOccupied" id="ownerOccupied" value="Yes">Yes</label>
                                     <label>
-                                        <input type="radio" name="ownerOccupied" id="ownerOccupied" value=false checked>No</label>
+                                        <input type="radio" name="ownerOccupied" id="ownerOccupied" value="No" checked>No</label>
                                 </div>
                                 <div class="owner-occupied-message">
                                     <p>We're not lending money on owner occupied estates.</p>
@@ -193,9 +205,9 @@
                                 <div class="select-label">
                                     <span>Do You Own More Than One Investment Property?</span>
                                     <label>
-                                        <input type="radio" name="ownMoreThanOneInvestmentProperty" value=true>Yes</label>
+                                        <input type="radio" name="ownMoreThanOneInvestmentProperty" value="Yes">Yes</label>
                                     <label>
-                                        <input type="radio" name="ownMoreThanOneInvestmentProperty" value=false checked>No</label>
+                                        <input type="radio" name="ownMoreThanOneInvestmentProperty" value="No" checked>No</label>
                                 </div>
                                 <div>
                                     <label>Comments
@@ -418,7 +430,7 @@
                     contentType: "application/json",
                     success: function(data) {
                         console.log(data); // 6
-                        alert('Your information has been forwarded to our agent. Someone will be in contact with you as soon as possible.');
+                        location.href = '/thanks.html';
                     }
                 });
             });
