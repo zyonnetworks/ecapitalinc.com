@@ -460,6 +460,24 @@ footer p {
   text-indent:-10000em;
 }
 
+.google-top {
+  background:url(../images/google-top.png) no-repeat;
+  width:25px;
+  background-size:cover;
+  height:16px;
+  display:block;
+  text-indent:-10000em;
+}
+
+.yelp-top {
+  background:url(../images/yelp-top.png) no-repeat;
+  width:13px;
+  background-size:cover;
+  height:16px;
+  display:block;
+  text-indent:-10000em;
+}
+
 .social-links-bottom {
   margin-top:25px;
   padding:0;
@@ -500,6 +518,11 @@ footer p {
 
 .social-links-bottom .youtube-bottom {
   background:url(../images/youtube-bottom.png) no-repeat;
+  background-size:cover;
+}
+
+.social-links-bottom .yelp-bottom {
+  background:url(../images/yelp-bottom.png) no-repeat;
   background-size:cover;
 }
 
@@ -1561,6 +1584,18 @@ div.center .button {
 .contact-agent {
   display:block;
   color:#FFFFFF !important;
+}
+
+.banner-content .pw:last-child {
+  margin-top:15px;
+}
+
+.pw-dark a {
+  color:#55a050 !important;
+}
+
+.pw-dark a:hover {
+  color:#366d3c !important;
 }
 
 @media (min-width: 992px) {
