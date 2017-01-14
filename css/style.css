@@ -1646,12 +1646,20 @@ div.center .button {
     margin-left:0;
   }
   .main-banner {
-    padding-top: 50px !important;
+    padding-top: 30px !important;
     color: #FFFFFF;
     height: auto;
   }
   .banner-subpage {
-      min-height: 175px;
+      min-height: 125px;
+  }
+  .top-bg-v2 h2 {
+    margin-top:10px;
+    margin-bottom:10px;
+  }
+
+  .top-bg-v2 .col-md-2 h2 {
+    margin-top: 40px;
   }
 }
 
