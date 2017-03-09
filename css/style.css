@@ -77,6 +77,25 @@ h4, .contact-agent {
   font-size:20px;
 }
 
+h5 {
+  color: rgb(183, 223, 25);
+  font-size:18px;
+}
+
+.form-header {
+  text-align:center;
+  margin-top:60px;
+  color:#55a050;
+}
+
+.banner-subpage h5 {
+  position:relative;
+  top:100px;
+  color:#55a050;
+  text-shadow: 1px 1px 15px rgba(255, 255, 255, 1);
+  font-weight:700;
+}
+
 label, .select-label {
   font-weight:400;
   width:100%;
@@ -1615,6 +1634,77 @@ div.center .button {
 
 .top-button-mobile .pw, .top-button .pw {
   margin-top:30px;
+}
+
+.form-page .logo {
+    text-indent: -10000em;
+    background: url(../images/logo.png) no-repeat;
+    width: 315px;
+    height: 65px;
+    display: inline-block;
+    margin-top: 50px;
+    max-width: 100%;
+    float:none;
+}
+
+.form-page .logo:before, .form-page .logo:after {
+  display:none;
+}
+
+.form-page .top-bg-v2 h2 {
+    width: 100%;
+    font-weight: 800;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left:0;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.form-page input, .form-page input:focus, .form-page textarea {
+    border: none;
+    background: #FFFFFF !important;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    background: transparent;
+    -webkit-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.05);
+    -moz-box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.05);
+    box-shadow: 0px 1px 1px 1px rgba(0,0,0,0.05);
+}
+
+.form-page .form .col-sm-6 {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.form-page button {
+    background: #9bb606;
+    font-size: 24px;
+    font-family: 'Nexa';
+    color: #FFFFFF;
+    border-radius: 5px;
+    border: none;
+    border-bottom: 3px solid #8e9b44;
+    padding: 10px 40px 7px 40px;
+    float: right;
+    width: 100%;
+    margin-top: 60px;
+}
+
+.form-page .top-bg-v2 {
+    background: url(../images/form-top-bg-v2.jpg) no-repeat;
+    background-size: cover;
+    width: 100%;
+    background-position: right top;
+}
+
+.faq-section h2 {
+    margin: 40px 0;
 }
 
 @media (min-width: 992px) {
